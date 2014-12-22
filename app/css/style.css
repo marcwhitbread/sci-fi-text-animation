@@ -1,3 +1,141 @@
+@-webkit-keyframes warmup {
+  0% {
+    opacity: 0;
+  }
+  55%,
+  85% {
+    opacity: 0.7;
+    color: #ecddc5;
+  }
+  40%,
+  50%,
+  90%,
+  100% {
+    opacity: 1.0;
+    color: #f4dfbd;
+  }
+}
+@keyframes warmup {
+  0% {
+    opacity: 0;
+  }
+  55%,
+  85% {
+    opacity: 0.7;
+    color: #ecddc5;
+  }
+  40%,
+  50%,
+  90%,
+  100% {
+    opacity: 1.0;
+    color: #f4dfbd;
+  }
+}
+@-webkit-keyframes burnout {
+  0%,
+  29.999%,
+  44%,
+  49.999%,
+  54%,
+  99% {
+    opacity: 1.0;
+  }
+  40%,
+  43.999%,
+  50%,
+  53.999%,
+  100% {
+    opacity: 0.0;
+  }
+}
+@keyframes burnout {
+  0%,
+  29.999%,
+  44%,
+  49.999%,
+  54%,
+  99% {
+    opacity: 1.0;
+  }
+  40%,
+  43.999%,
+  50%,
+  53.999%,
+  100% {
+    opacity: 0.0;
+  }
+}
+
+
+@-webkit-keyframes warmup {
+  0% {
+    opacity: 0;
+  }
+  55%,
+  85% {
+    opacity: 0.7;
+    color: #ecddc5;
+  }
+  40%,
+  50%,
+  90%,
+  100% {
+    opacity: 1.0;
+    color: #f4dfbd;
+  }
+}
+@keyframes warmup {
+  0% {
+    opacity: 0;
+  }
+  55%,
+  85% {
+    opacity: 0.7;
+    color: #ecddc5;
+  }
+  40%,
+  50%,
+  90%,
+  100% {
+    opacity: 1.0;
+    color: #f4dfbd;
+  }
+}
+@-webkit-keyframes burnout {
+  0%,
+  29.999%,
+  44%,
+  49.999%,
+  54%,
+  99% {
+    opacity: 1.0;
+  }
+  40%,
+  43.999%,
+  50%,
+  53.999%,
+  100% {
+    opacity: 0.0;
+  }
+}
+@keyframes burnout {
+  0%,
+  29.999%,
+  44%,
+  49.999%,
+  54%,
+  99% {
+    opacity: 1.0;
+  }
+  40%,
+  43.999%,
+  50%,
+  53.999%,
+  100% {
+    opacity: 0.0;
+  }
+}
 body {
   position: relative;
   font-family: Verdana;
@@ -18,8 +156,13 @@ body {
 }
 #mars {
   position: absolute;
-  top: 70px;
-  left: 220px;
+  top: 80px;
+  left: 240px;
+}
+#moon {
+  position: absolute;
+  top: 260px;
+  left: 70px;
 }
 .scifi {
   position: relative;
@@ -48,7 +191,8 @@ body {
   line-height: 25px;
   font-weight: 700;
   letter-spacing: 0;
-  background: url(../img/text-mask.png) repeat 0 0;
+  color: #f4dfbd;
+  background: -webkit-linear-gradient(transparent, transparent), url(../img/text-mask.png) repeat 0 0;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -71,21 +215,6 @@ body {
   -ms-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
   -o-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-.scifi .inner .text .lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.scifi .inner .text .lines .line {
-  position: relative;
-  width: 100%;
-  height: 1px;
-  background: #000;
-  margin-top: 1px;
-  opacity: 0.2;
 }
 .scifi .inner .corner {
   position: absolute;
@@ -159,121 +288,252 @@ body {
 }
 .scifi .inner:hover .text span {
   opacity: 1;
-  -webkit-transition: opacity 0s linear 750ms;
-  -moz-transition: opacity 0s linear 750ms;
-  -ms-transition: opacity 0s linear 750ms;
-  -o-transition: opacity 0s linear 750ms;
-  transition: opacity 0s linear 750ms;
 }
 .scifi .inner:hover .text span:nth-child(5n) {
+  -webkit-transition: opacity 0s linear 75ms;
+  -moz-transition: opacity 0s linear 75ms;
+  -ms-transition: opacity 0s linear 75ms;
+  -o-transition: opacity 0s linear 75ms;
+  transition: opacity 0s linear 75ms;
   -webkit-animation: warmup 750ms linear 75ms;
   animation: warmup 750ms linear 75ms;
 }
 .scifi .inner:hover .text span:nth-child(5n+1) {
+  -webkit-transition: opacity 0s linear 375ms;
+  -moz-transition: opacity 0s linear 375ms;
+  -ms-transition: opacity 0s linear 375ms;
+  -o-transition: opacity 0s linear 375ms;
+  transition: opacity 0s linear 375ms;
   -webkit-animation: warmup 750ms linear 375ms;
   animation: warmup 750ms linear 375ms;
 }
 .scifi .inner:hover .text span:nth-child(5n+2) {
+  -webkit-transition: opacity 0s linear 225ms;
+  -moz-transition: opacity 0s linear 225ms;
+  -ms-transition: opacity 0s linear 225ms;
+  -o-transition: opacity 0s linear 225ms;
+  transition: opacity 0s linear 225ms;
   -webkit-animation: warmup 750ms linear 225ms;
   animation: warmup 750ms linear 225ms;
 }
 .scifi .inner:hover .text span:nth-child(5n+3) {
+  -webkit-transition: opacity 0s linear 150ms;
+  -moz-transition: opacity 0s linear 150ms;
+  -ms-transition: opacity 0s linear 150ms;
+  -o-transition: opacity 0s linear 150ms;
+  transition: opacity 0s linear 150ms;
   -webkit-animation: warmup 750ms linear 150ms;
   animation: warmup 750ms linear 150ms;
 }
 .scifi .inner:hover .text span:nth-child(5n+4) {
+  -webkit-transition: opacity 0s linear 525ms;
+  -moz-transition: opacity 0s linear 525ms;
+  -ms-transition: opacity 0s linear 525ms;
+  -o-transition: opacity 0s linear 525ms;
+  transition: opacity 0s linear 525ms;
   -webkit-animation: warmup 750ms linear 525ms;
   animation: warmup 750ms linear 525ms;
 }
 .scifi .inner:hover .corner {
   opacity: 0;
-  -webkit-transition: opacity 0s linear 1500ms;
-  -moz-transition: opacity 0s linear 1500ms;
-  -ms-transition: opacity 0s linear 1500ms;
-  -o-transition: opacity 0s linear 1500ms;
-  transition: opacity 0s linear 1500ms;
 }
 .scifi .inner:hover .corner.I {
+  -webkit-transition: opacity 0s linear 1350ms;
+  -moz-transition: opacity 0s linear 1350ms;
+  -ms-transition: opacity 0s linear 1350ms;
+  -o-transition: opacity 0s linear 1350ms;
+  transition: opacity 0s linear 1350ms;
   -webkit-animation: burnout 750ms linear 1350ms;
   animation: burnout 750ms linear 1350ms;
 }
 .scifi .inner:hover .corner.II {
+  -webkit-transition: opacity 0s linear 1200ms;
+  -moz-transition: opacity 0s linear 1200ms;
+  -ms-transition: opacity 0s linear 1200ms;
+  -o-transition: opacity 0s linear 1200ms;
+  transition: opacity 0s linear 1200ms;
   -webkit-animation: burnout 750ms linear 1200ms;
   animation: burnout 750ms linear 1200ms;
 }
 .scifi .inner:hover .corner.III {
+  -webkit-transition: opacity 0s linear 1050ms;
+  -moz-transition: opacity 0s linear 1050ms;
+  -ms-transition: opacity 0s linear 1050ms;
+  -o-transition: opacity 0s linear 1050ms;
+  transition: opacity 0s linear 1050ms;
   -webkit-animation: burnout 750ms linear 1050ms;
   animation: burnout 750ms linear 1050ms;
 }
 .scifi .inner:hover .corner.IV {
+  -webkit-transition: opacity 0s linear 825ms;
+  -moz-transition: opacity 0s linear 825ms;
+  -ms-transition: opacity 0s linear 825ms;
+  -o-transition: opacity 0s linear 825ms;
+  transition: opacity 0s linear 825ms;
   -webkit-animation: burnout 750ms linear 825ms;
   animation: burnout 750ms linear 825ms;
 }
-@-webkit-keyframes warmup {
-  0% {
-    opacity: 0;
-  }
-  55%,
-  85% {
-    opacity: 0.7;
-    color: #ecddc5;
-  }
-  40%,
-  50%,
-  90%,
-  100% {
-    opacity: 1.0;
-    color: #f4dfbd;
-  }
+.planet {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
 }
-@keyframes warmup {
-  0% {
-    opacity: 0;
-  }
-  55%,
-  85% {
-    opacity: 0.7;
-    color: #ecddc5;
-  }
-  40%,
-  50%,
-  90%,
-  100% {
-    opacity: 1.0;
-    color: #f4dfbd;
-  }
+.planet > .inner {
+  position: relative;
+  display: inline-block;
+  width: 0%;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
 }
-@-webkit-keyframes burnout {
-  0%,
-  29.999%,
-  44%,
-  49.999%,
-  54%,
-  99% {
-    opacity: 1.0;
-  }
-  40%,
-  43.999%,
-  50%,
-  53.999%,
-  100% {
-    opacity: 0.0;
-  }
+.planet > .inner .corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 750ms linear;
+  -moz-transition: opacity 750ms linear;
+  -ms-transition: opacity 750ms linear;
+  -o-transition: opacity 750ms linear;
+  transition: opacity 750ms linear;
 }
-@keyframes burnout {
-  0%,
-  29.999%,
-  44%,
-  49.999%,
-  54%,
-  99% {
-    opacity: 1.0;
-  }
-  40%,
-  43.999%,
-  50%,
-  53.999%,
-  100% {
-    opacity: 0.0;
-  }
+.planet > .inner .corner .h,
+.planet > .inner .corner .v {
+  position: absolute;
+  background: #f4dfbd url(../img/text-mask.png) repeat 0 0;
+  -webkit-box-shadow: 0 0 2px 0 #f4dfbd;
+  box-shadow: 0 0 2px 0 #f4dfbd;
 }
+.planet > .inner .corner .h {
+  width: 10px;
+  height: 1px;
+}
+.planet > .inner .corner .v {
+  width: 1px;
+  height: 10px;
+}
+.planet > .inner .corner.I {
+  top: 1px;
+  left: 1px;
+}
+.planet > .inner .corner.I .h,
+.planet > .inner .corner.I .v {
+  top: 0;
+  left: 0;
+}
+.planet > .inner .corner.II {
+  top: 1px;
+  right: 1px;
+}
+.planet > .inner .corner.II .h,
+.planet > .inner .corner.II .v {
+  top: 0;
+  right: 0;
+}
+.planet > .inner .corner.III {
+  bottom: 1px;
+  right: 1px;
+}
+.planet > .inner .corner.III .h,
+.planet > .inner .corner.III .v {
+  bottom: 0;
+  right: 0;
+}
+.planet > .inner .corner.IV {
+  bottom: 1px;
+  left: 1px;
+}
+.planet > .inner .corner.IV .h,
+.planet > .inner .corner.IV .v {
+  bottom: 0;
+  left: 0;
+}
+.planet > .inner .body {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: #ddd;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+.planet > .inner .line {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  margin: 0 0 -1px -14px;
+}
+.planet > .inner .line .seg1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 1.5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 2px 0 #f4dfbd;
+  box-shadow: 0 0 2px 0 #f4dfbd;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+}
+.planet > .inner .line .seg1 .bg {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 200%;
+  height: 100px;
+  background: #f4dfbd url(../img/text-mask.png) repeat 0 0;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+}
+.planet > .inner .line .seg2 {
+  position: absolute;
+  top: -7px;
+  left: 21px;
+  width: 100px;
+}
+.planet > .inner .line .seg2 > .inner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.planet > .inner .line .seg2 .bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #f4dfbd url(../img/text-mask.png) repeat 0 0;
+  -webkit-box-shadow: 0 0 2px 0 #f4dfbd;
+  box-shadow: 0 0 2px 0 #f4dfbd;
+}
+.planet > .inner .line .seg2 .text {
+  display: block;
+  padding: 0 5px 5px 5px;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #f4dfbd;
+  background: -webkit-linear-gradient(transparent, transparent), url(../img/text-mask.png) repeat 0 0;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+.planet > .inner .line .seg2 .text span {
+  padding-right: 0;
+  text-shadow: 0 0 2px rgba(244, 223, 189, 0.9);
+  -webkit-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
