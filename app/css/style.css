@@ -6,10 +6,15 @@ body {
   margin: 0;
   background: #000;
 }
-#button {
+#xandar {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+#earth {
+  position: absolute;
+  top: 140px;
+  left: 130px;
 }
 .scifi {
   position: relative;
@@ -24,6 +29,7 @@ body {
   width: 0%;
   height: 25px;
   padding: 6px 31px 7px 8px;
+  cursor: pointer;
   -webkit-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
   -moz-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
   -ms-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -77,47 +83,47 @@ body {
   border-bottom: 1px solid #f4dfbd;
   border-left: 1px solid #f4dfbd;
 }
-.scifi:hover .inner {
+.scifi .inner:hover {
   width: 100%;
   padding: 6px 0 7px 0;
 }
-.scifi:hover .inner .text {
+.scifi .inner:hover .text {
   opacity: 1;
   padding: 0 7px 0 8px;
 }
-.scifi:hover .inner .text span:nth-child(5n) {
+.scifi .inner:hover .text span:nth-child(5n) {
   -webkit-animation: warmup 600ms linear 60ms forwards;
   animation: warmup 600ms linear 60ms forwards;
 }
-.scifi:hover .inner .text span:nth-child(5n+1) {
+.scifi .inner:hover .text span:nth-child(5n+1) {
   -webkit-animation: warmup 600ms linear 300ms forwards;
   animation: warmup 600ms linear 300ms forwards;
 }
-.scifi:hover .inner .text span:nth-child(5n+2) {
+.scifi .inner:hover .text span:nth-child(5n+2) {
   -webkit-animation: warmup 600ms linear 180ms forwards;
   animation: warmup 600ms linear 180ms forwards;
 }
-.scifi:hover .inner .text span:nth-child(5n+3) {
+.scifi .inner:hover .text span:nth-child(5n+3) {
   -webkit-animation: warmup 600ms linear 120ms forwards;
   animation: warmup 600ms linear 120ms forwards;
 }
-.scifi:hover .inner .text span:nth-child(5n+4) {
+.scifi .inner:hover .text span:nth-child(5n+4) {
   -webkit-animation: warmup 600ms linear 420ms forwards;
   animation: warmup 600ms linear 420ms forwards;
 }
-.scifi:hover .inner .corner.I {
+.scifi .inner:hover .corner.I {
   -webkit-animation: burnout 600ms linear 1080ms forwards;
   animation: burnout 600ms linear 1080ms forwards;
 }
-.scifi:hover .inner .corner.II {
+.scifi .inner:hover .corner.II {
   -webkit-animation: burnout 600ms linear 960ms forwards;
   animation: burnout 600ms linear 960ms forwards;
 }
-.scifi:hover .inner .corner.III {
+.scifi .inner:hover .corner.III {
   -webkit-animation: burnout 600ms linear 840ms forwards;
   animation: burnout 600ms linear 840ms forwards;
 }
-.scifi:hover .inner .corner.IV {
+.scifi .inner:hover .corner.IV {
   -webkit-animation: burnout 600ms linear 660ms forwards;
   animation: burnout 600ms linear 660ms forwards;
 }
