@@ -1,0 +1,158 @@
+body {
+  position: relative;
+  font-family: Verdana;
+  font-size: 25px;
+  color: #fff;
+  margin: 0;
+  background: #000;
+}
+#button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.scifi {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  height: 41px;
+}
+.scifi .inner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 0%;
+  height: 25px;
+  padding: 6px 31px 7px 8px;
+  -webkit-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.scifi .inner .text {
+  position: relative;
+  display: block;
+  color: #f4dfbd;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 0;
+  -webkit-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.scifi .inner .text span {
+  padding-right: 0;
+  text-shadow: 0 0 3px #f4dfbd;
+  opacity: 0;
+}
+.scifi .inner .corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+.scifi .inner .corner.I {
+  top: 0;
+  left: 0;
+  border-top: 1px solid #f4dfbd;
+  border-left: 1px solid #f4dfbd;
+}
+.scifi .inner .corner.II {
+  top: 0;
+  right: 0;
+  border-top: 1px solid #f4dfbd;
+  border-right: 1px solid #f4dfbd;
+}
+.scifi .inner .corner.III {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid #f4dfbd;
+  border-right: 1px solid #f4dfbd;
+}
+.scifi .inner .corner.IV {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #f4dfbd;
+  border-left: 1px solid #f4dfbd;
+}
+.scifi:hover .inner {
+  width: 100%;
+  padding: 6px 0 7px 0;
+}
+.scifi:hover .inner .text {
+  opacity: 1;
+  padding: 0 7px 0 8px;
+}
+.scifi:hover .inner .text span:nth-child(5n) {
+  -webkit-amimation: warmup 600ms linear 60ms forwards;
+  amimation: warmup 600ms linear 60ms forwards;
+}
+.scifi:hover .inner .text span:nth-child(5n+1) {
+  -webkit-amimation: warmup 600ms linear 300ms forwards;
+  amimation: warmup 600ms linear 300ms forwards;
+}
+.scifi:hover .inner .text span:nth-child(5n+2) {
+  -webkit-amimation: warmup 600ms linear 180ms forwards;
+  amimation: warmup 600ms linear 180ms forwards;
+}
+.scifi:hover .inner .text span:nth-child(5n+3) {
+  -webkit-amimation: warmup 600ms linear 120ms forwards;
+  amimation: warmup 600ms linear 120ms forwards;
+}
+.scifi:hover .inner .text span:nth-child(5n+4) {
+  -webkit-amimation: warmup 600ms linear 420ms forwards;
+  amimation: warmup 600ms linear 420ms forwards;
+}
+.scifi:hover .inner .corner.I {
+  -webkit-amimation: burnout 600ms linear 1080ms forwards;
+  amimation: burnout 600ms linear 1080ms forwards;
+}
+.scifi:hover .inner .corner.II {
+  -webkit-amimation: burnout 600ms linear 960ms forwards;
+  amimation: burnout 600ms linear 960ms forwards;
+}
+.scifi:hover .inner .corner.III {
+  -webkit-amimation: burnout 600ms linear 840ms forwards;
+  amimation: burnout 600ms linear 840ms forwards;
+}
+.scifi:hover .inner .corner.IV {
+  -webkit-amimation: burnout 600ms linear 660ms forwards;
+  amimation: burnout 600ms linear 660ms forwards;
+}
+@keyframes warmup {
+  0% {
+    opacity: 0;
+    color: #c48621;
+  }
+  55%,
+  85% {
+    opacity: 0.7;
+    color: #ecddc5;
+  }
+  40%,
+  50%,
+  90%,
+  100% {
+    opacity: 1.0;
+    color: #f4dfbd;
+  }
+}
+@keyframes burnout {
+  0%,
+  29.999%,
+  44%,
+  49.999%,
+  54%,
+  99% {
+    opacity: 1.0;
+  }
+  40%,
+  43.999%,
+  50%,
+  53.999%,
+  100% {
+    opacity: 0.0;
+  }
+}
