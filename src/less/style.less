@@ -26,7 +26,7 @@
 
 @ease-out: cubic-bezier(0.000, 0.000, 0.580, 1.000);
 @ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-@duration: 600ms;
+@duration: 750ms;
 @color: #f4dfbd;
 
 body {
@@ -64,7 +64,7 @@ body {
 		
 		width: 0%;
 		height: 25px;
-		padding: 6px 31px 7px 8px;
+		padding: 7px 32px 7px 8px;
 		cursor: pointer;
 		
 		.transition(padding @duration @ease-out-quint~"," width @duration @ease-out-quint);
@@ -93,6 +93,8 @@ body {
 			position: absolute;
 			width: 10px;
 			height: 10px;
+			
+			.animation(warmup @duration linear @duration backwards);
 				
 			&.I {
 				top: 0;
@@ -125,11 +127,11 @@ body {
 		
 		&:hover {
 			width: 100%;
-			padding: 6px 0 7px 0;
+			padding: 7px 0 7px 8px;
 			
 			.text {
 				opacity: 1;
-				padding: 0 7px 0 8px;
+				padding: 0 3px 0 0;
 				
 				span {
 					&:nth-child(5n) {
@@ -177,8 +179,8 @@ body {
 	}
 }
 
-@keyframes warmup {
-
+.warmup() {
+	
 	0% {
 		opacity: 0;
 	}
@@ -195,11 +197,21 @@ body {
 	
 }
 
-@keyframes burnout {
-  0%,29.999%,44%,49.999%,54%,99% {
-    opacity: 1.0;
-  }
-  40%,43.999%,50%,53.999%,100% {
-    opacity: 0.0;
-  }
+@-webkit-keyframes warmup { .warmup(); }
+@keyframes warmup { .warmup(); }
+
+.burnout() {
+	
+	0%,29.999%,44%,49.999%,54%,99% {
+		opacity: 1.0;
+	}
+	
+	40%,43.999%,50%,53.999%,100% {
+		opacity: 0.0;
+	}
+	
 }
+
+@-webkit-keyframes burnout { .burnout(); }
+
+@keyframes burnout { .burnout(); }

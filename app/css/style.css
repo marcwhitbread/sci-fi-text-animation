@@ -28,12 +28,12 @@ body {
   overflow: hidden;
   width: 0%;
   height: 25px;
-  padding: 6px 31px 7px 8px;
+  padding: 7px 32px 7px 8px;
   cursor: pointer;
-  -webkit-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  -moz-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  -ms-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  -o-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1) , width 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1) , width 750ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1) , width 750ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1) , width 750ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1) , width 750ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .scifi .inner .text {
   position: relative;
@@ -44,10 +44,10 @@ body {
   font-weight: 700;
   letter-spacing: 0;
   padding: 0;
-  -webkit-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  -moz-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  -ms-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  -o-transition: padding 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: padding 750ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .scifi .inner .text span {
   padding-right: 0;
@@ -58,6 +58,8 @@ body {
   position: absolute;
   width: 10px;
   height: 10px;
+  -webkit-animation: warmup 750ms linear 750ms backwards;
+  animation: warmup 750ms linear 750ms backwards;
 }
 .scifi .inner .corner.I {
   top: 0;
@@ -85,47 +87,64 @@ body {
 }
 .scifi .inner:hover {
   width: 100%;
-  padding: 6px 0 7px 0;
+  padding: 7px 0 7px 8px;
 }
 .scifi .inner:hover .text {
   opacity: 1;
-  padding: 0 7px 0 8px;
+  padding: 0 3px 0 0;
 }
 .scifi .inner:hover .text span:nth-child(5n) {
-  -webkit-animation: warmup 600ms linear 60ms forwards;
-  animation: warmup 600ms linear 60ms forwards;
+  -webkit-animation: warmup 750ms linear 75ms forwards;
+  animation: warmup 750ms linear 75ms forwards;
 }
 .scifi .inner:hover .text span:nth-child(5n+1) {
-  -webkit-animation: warmup 600ms linear 300ms forwards;
-  animation: warmup 600ms linear 300ms forwards;
+  -webkit-animation: warmup 750ms linear 375ms forwards;
+  animation: warmup 750ms linear 375ms forwards;
 }
 .scifi .inner:hover .text span:nth-child(5n+2) {
-  -webkit-animation: warmup 600ms linear 180ms forwards;
-  animation: warmup 600ms linear 180ms forwards;
+  -webkit-animation: warmup 750ms linear 225ms forwards;
+  animation: warmup 750ms linear 225ms forwards;
 }
 .scifi .inner:hover .text span:nth-child(5n+3) {
-  -webkit-animation: warmup 600ms linear 120ms forwards;
-  animation: warmup 600ms linear 120ms forwards;
+  -webkit-animation: warmup 750ms linear 150ms forwards;
+  animation: warmup 750ms linear 150ms forwards;
 }
 .scifi .inner:hover .text span:nth-child(5n+4) {
-  -webkit-animation: warmup 600ms linear 420ms forwards;
-  animation: warmup 600ms linear 420ms forwards;
+  -webkit-animation: warmup 750ms linear 525ms forwards;
+  animation: warmup 750ms linear 525ms forwards;
 }
 .scifi .inner:hover .corner.I {
-  -webkit-animation: burnout 600ms linear 1080ms forwards;
-  animation: burnout 600ms linear 1080ms forwards;
+  -webkit-animation: burnout 750ms linear 1350ms forwards;
+  animation: burnout 750ms linear 1350ms forwards;
 }
 .scifi .inner:hover .corner.II {
-  -webkit-animation: burnout 600ms linear 960ms forwards;
-  animation: burnout 600ms linear 960ms forwards;
+  -webkit-animation: burnout 750ms linear 1200ms forwards;
+  animation: burnout 750ms linear 1200ms forwards;
 }
 .scifi .inner:hover .corner.III {
-  -webkit-animation: burnout 600ms linear 840ms forwards;
-  animation: burnout 600ms linear 840ms forwards;
+  -webkit-animation: burnout 750ms linear 1050ms forwards;
+  animation: burnout 750ms linear 1050ms forwards;
 }
 .scifi .inner:hover .corner.IV {
-  -webkit-animation: burnout 600ms linear 660ms forwards;
-  animation: burnout 600ms linear 660ms forwards;
+  -webkit-animation: burnout 750ms linear 825ms forwards;
+  animation: burnout 750ms linear 825ms forwards;
+}
+@-webkit-keyframes warmup {
+  0% {
+    opacity: 0;
+  }
+  55%,
+  85% {
+    opacity: 0.7;
+    color: #ecddc5;
+  }
+  40%,
+  50%,
+  90%,
+  100% {
+    opacity: 1.0;
+    color: #f4dfbd;
+  }
 }
 @keyframes warmup {
   0% {
@@ -142,6 +161,23 @@ body {
   100% {
     opacity: 1.0;
     color: #f4dfbd;
+  }
+}
+@-webkit-keyframes burnout {
+  0%,
+  29.999%,
+  44%,
+  49.999%,
+  54%,
+  99% {
+    opacity: 1.0;
+  }
+  40%,
+  43.999%,
+  50%,
+  53.999%,
+  100% {
+    opacity: 0.0;
   }
 }
 @keyframes burnout {
