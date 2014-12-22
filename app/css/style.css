@@ -86,45 +86,44 @@ body {
   padding: 0 7px 0 8px;
 }
 .scifi:hover .inner .text span:nth-child(5n) {
-  -webkit-amimation: warmup 600ms linear 60ms forwards;
-  amimation: warmup 600ms linear 60ms forwards;
+  -webkit-animation: warmup 600ms linear 60ms forwards;
+  animation: warmup 600ms linear 60ms forwards;
 }
 .scifi:hover .inner .text span:nth-child(5n+1) {
-  -webkit-amimation: warmup 600ms linear 300ms forwards;
-  amimation: warmup 600ms linear 300ms forwards;
+  -webkit-animation: warmup 600ms linear 300ms forwards;
+  animation: warmup 600ms linear 300ms forwards;
 }
 .scifi:hover .inner .text span:nth-child(5n+2) {
-  -webkit-amimation: warmup 600ms linear 180ms forwards;
-  amimation: warmup 600ms linear 180ms forwards;
+  -webkit-animation: warmup 600ms linear 180ms forwards;
+  animation: warmup 600ms linear 180ms forwards;
 }
 .scifi:hover .inner .text span:nth-child(5n+3) {
-  -webkit-amimation: warmup 600ms linear 120ms forwards;
-  amimation: warmup 600ms linear 120ms forwards;
+  -webkit-animation: warmup 600ms linear 120ms forwards;
+  animation: warmup 600ms linear 120ms forwards;
 }
 .scifi:hover .inner .text span:nth-child(5n+4) {
-  -webkit-amimation: warmup 600ms linear 420ms forwards;
-  amimation: warmup 600ms linear 420ms forwards;
+  -webkit-animation: warmup 600ms linear 420ms forwards;
+  animation: warmup 600ms linear 420ms forwards;
 }
 .scifi:hover .inner .corner.I {
-  -webkit-amimation: burnout 600ms linear 1080ms forwards;
-  amimation: burnout 600ms linear 1080ms forwards;
+  -webkit-animation: burnout 600ms linear 1080ms forwards;
+  animation: burnout 600ms linear 1080ms forwards;
 }
 .scifi:hover .inner .corner.II {
-  -webkit-amimation: burnout 600ms linear 960ms forwards;
-  amimation: burnout 600ms linear 960ms forwards;
+  -webkit-animation: burnout 600ms linear 960ms forwards;
+  animation: burnout 600ms linear 960ms forwards;
 }
 .scifi:hover .inner .corner.III {
-  -webkit-amimation: burnout 600ms linear 840ms forwards;
-  amimation: burnout 600ms linear 840ms forwards;
+  -webkit-animation: burnout 600ms linear 840ms forwards;
+  animation: burnout 600ms linear 840ms forwards;
 }
 .scifi:hover .inner .corner.IV {
-  -webkit-amimation: burnout 600ms linear 660ms forwards;
-  amimation: burnout 600ms linear 660ms forwards;
+  -webkit-animation: burnout 600ms linear 660ms forwards;
+  animation: burnout 600ms linear 660ms forwards;
 }
 @keyframes warmup {
   0% {
     opacity: 0;
-    color: #c48621;
   }
   55%,
   85% {
