@@ -1,4 +1,3 @@
-Hamburger Icon Animation
-========================
+<h1>Sci-fi Text Animation</h1>
 
-Transition test between closed and open menu states for hamburger icon.
+<p>Sci-fi overlay style hover animation. Inspired by the Guardians of the Galaxy movie planetary title screen animation.</p>
