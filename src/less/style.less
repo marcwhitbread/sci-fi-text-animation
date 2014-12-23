@@ -29,10 +29,16 @@ body {
 	left: 240px;
 }
 
-#moon {
+#phobos {
 	position: absolute;
 	top: 260px;
 	left: 70px;
+}
+
+#deimos {
+	position: absolute;
+	top: 310px;
+	left: 340px;
 }
 
 .scifi {
@@ -219,7 +225,7 @@ body {
 	> .inner {
 		position: relative;
 		display: inline-block;
-		
+		overflow: hidden;
 		width: 0%;
 		height: 42px;
 		width: 42px;
@@ -230,7 +236,7 @@ body {
 			width: 10px;
 			height: 10px;
 			
-			opacity: 0;
+			opacity: 1;
 
 			.transition(opacity @duration linear);
 			
@@ -297,9 +303,11 @@ body {
 			left: 12px;
 			right: 12px;
 			bottom: 12px;
-			background: #ddd;
 			
+			.background-gradient(#aa8e74, #433130);
 			.border-radius(100px);
+			.transform(rotate(30deg));
+			.box-shadow(0 0 8px -1px #fff);
 		}
 		
 		.line {
@@ -315,6 +323,7 @@ body {
 				width: 25px;
 				height: 1.5px;
 				overflow: hidden;
+				opacity: 0;
 				
 				.box-shadow(0 0 2px 0 @color);
 				.transform(rotateZ(-45deg));
@@ -336,7 +345,6 @@ body {
 				position: absolute;
 				top: -7px;
 				left: 21px;
-				width: 100px;
 				
 				> .inner {
 					position: absolute;
@@ -348,7 +356,7 @@ body {
 					position: absolute;
 					bottom: 0;
 					left: 0;
-					width: 100%;
+					width: 0%;
 					height: 1px;
 					background: @color url(../img/text-mask.png) repeat 0 0;
 					
@@ -371,9 +379,137 @@ body {
 						padding-right: 0;
 						text-shadow: 0 0 2px @color_with_opacity;
 						
-						// opacity: 0;
-						
+						opacity: 0;
 						.transition(opacity @duration*0.5 @ease-out-quint);
+					}
+				}
+				
+				.desc {
+					position: absolute;
+					top: 34px;
+					right: 5px;
+					
+					text-align: right;
+					color: @color;
+					
+					.text-image-mask(url(../img/text-mask.png) repeat 0 0);
+					
+					span {
+						display: block;
+						font-size: 10px;
+						line-height: 140%;
+						text-shadow: 0 0 1px @color_with_opacity;
+						
+						opacity: 0;
+						.transition(opacity @duration*0.5 @ease-out-quint);
+					}
+				}
+			}
+	
+		}
+		
+		&.debug,
+		&:hover {
+			overflow: visible;
+			
+			.corner {
+				opacity: 0;
+				
+				&.I {
+					.transition(opacity 0s linear);
+					.animation(burnout @duration*0.5 linear);
+				}
+				
+				&.II {
+					.transition(opacity 0s linear);
+					.animation(burnout 0 linear);
+				}
+				
+				&.III {
+					.transition(opacity 0s linear @duration*0.1);
+					.animation(burnout @duration*0.5 linear @duration*0.1);
+				}
+				
+				&.IV {
+					.transition(opacity 0s linear @duration*0.3);
+					.animation(burnout @duration*0.3 linear @duration*0.2);
+				}
+			}
+			
+			.line {
+				
+				.seg1 {
+					opacity: 1;
+					.transition(opacity 0s linear @duration*0.5);
+					.animation(flickon @duration linear @duration*0.5);
+				}
+				
+				.seg2 {
+					
+					.bar {
+						width: 100%;
+						opacity: 1;
+						
+						.transition(width @duration*0.5 @ease-out-quint 800ms);
+					}
+					
+					.text {
+						
+						span {
+							opacity: 1;
+							
+							&:nth-child(5n) {
+								.transition(opacity 0s linear @duration*0.1+800ms);
+								.animation(flickonscreen @duration linear @duration*0.1+800ms);
+							}
+							
+							&:nth-child(5n+1) {
+								.transition(opacity 0s linear @duration*0.1+800ms);
+								.animation(flickonscreen @duration linear @duration*0.1+800ms);
+							}
+							
+							&:nth-child(5n+2) {
+								.transition(opacity 0s linear @duration*0.1+800ms);
+								.animation(flickonscreen @duration linear @duration*0.1+800ms);
+							}
+							
+							&:nth-child(5n+3) {
+								.transition(opacity 0s linear @duration*0.3+800ms);
+								.animation(flickonscreen @duration linear @duration*0.2+800ms);
+							}
+							
+							&:nth-child(5n+4) {
+								.transition(opacity 0s linear @duration*0.1+800ms);
+								.animation(flickonscreen @duration linear @duration*0.1+800ms);
+							}
+							
+							&:nth-child(5n+5) {
+								.transition(opacity 0s linear @duration*0.2+800ms);
+								.animation(flickonscreen @duration linear @duration*0.2+800ms);
+							}
+							
+							&:nth-child(5n+7) {
+								.transition(opacity 0s linear @duration*0.1+800ms);
+								.animation(flickonscreen @duration linear @duration*0.1+800ms);
+							}
+						}
+					}
+					
+					.desc {
+						
+						span {
+							opacity: 1;
+							
+							@iterations: 15;							
+							.mixin-loop (@i) when (@i > 0) {
+								&:nth-child(@{i}) {
+									.transition(opacity 0s linear @duration+500ms+300ms*@i);
+									.animation(flickonscreen @duration linear @duration+500ms+300ms*@i);
+								}
+								.mixin-loop(@i - 1);
+							}
+							.mixin-loop(@iterations);
+						}
 					}
 				}
 			}

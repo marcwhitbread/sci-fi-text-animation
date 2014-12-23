@@ -66,6 +66,74 @@
     opacity: 0.0;
   }
 }
+@-webkit-keyframes flickon {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999%,
+  30%,
+  100% {
+    opacity: 1.0;
+  }
+}
+@keyframes flickon {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999%,
+  30%,
+  100% {
+    opacity: 1.0;
+  }
+}
+@-webkit-keyframes flickonscreen {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999% {
+    opacity: 0.5;
+    color: #ecddc5;
+  }
+  30%,
+  99.999% {
+    opacity: 1.0;
+  }
+  100% {
+    color: #f4dfbd;
+  }
+}
+@keyframes flickonscreen {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999% {
+    opacity: 0.5;
+    color: #ecddc5;
+  }
+  30%,
+  99.999% {
+    opacity: 1.0;
+  }
+  100% {
+    color: #f4dfbd;
+  }
+}
 
 
 @-webkit-keyframes warmup {
@@ -136,6 +204,74 @@
     opacity: 0.0;
   }
 }
+@-webkit-keyframes flickon {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999%,
+  30%,
+  100% {
+    opacity: 1.0;
+  }
+}
+@keyframes flickon {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999%,
+  30%,
+  100% {
+    opacity: 1.0;
+  }
+}
+@-webkit-keyframes flickonscreen {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999% {
+    opacity: 0.5;
+    color: #ecddc5;
+  }
+  30%,
+  99.999% {
+    opacity: 1.0;
+  }
+  100% {
+    color: #f4dfbd;
+  }
+}
+@keyframes flickonscreen {
+  0%,
+  19.999%,
+  25%,
+  29.999% {
+    opacity: 0.0;
+  }
+  20%,
+  24.999% {
+    opacity: 0.5;
+    color: #ecddc5;
+  }
+  30%,
+  99.999% {
+    opacity: 1.0;
+  }
+  100% {
+    color: #f4dfbd;
+  }
+}
 body {
   position: relative;
   font-family: Verdana;
@@ -159,10 +295,15 @@ body {
   top: 80px;
   left: 240px;
 }
-#moon {
+#phobos {
   position: absolute;
   top: 260px;
   left: 70px;
+}
+#deimos {
+  position: absolute;
+  top: 310px;
+  left: 340px;
 }
 .scifi {
   position: relative;
@@ -381,6 +522,7 @@ body {
 .planet > .inner {
   position: relative;
   display: inline-block;
+  overflow: hidden;
   width: 0%;
   height: 42px;
   width: 42px;
@@ -390,7 +532,7 @@ body {
   position: absolute;
   width: 10px;
   height: 10px;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: opacity 750ms linear;
   -moz-transition: opacity 750ms linear;
   -ms-transition: opacity 750ms linear;
@@ -454,9 +596,18 @@ body {
   left: 12px;
   right: 12px;
   bottom: 12px;
-  background: #ddd;
+  background: -webkit-gradient(radial, center center, 0, center center, 10, from(#aa8e74), to(#433130));
+  background: -webkit-radial-gradient(circle, #aa8e74, #433130);
+  background: -moz-radial-gradient(circle, #aa8e74, #433130);
+  background: -ms-radial-gradient(circle, #aa8e74, #433130);
   -webkit-border-radius: 100px;
   border-radius: 100px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -webkit-box-shadow: 0 0 8px -1px #ffffff;
+  box-shadow: 0 0 8px -1px #ffffff;
 }
 .planet > .inner .line {
   position: absolute;
@@ -471,6 +622,7 @@ body {
   width: 25px;
   height: 1.5px;
   overflow: hidden;
+  opacity: 0;
   -webkit-box-shadow: 0 0 2px 0 #f4dfbd;
   box-shadow: 0 0 2px 0 #f4dfbd;
   -webkit-transform: rotateZ(-45deg);
@@ -494,7 +646,6 @@ body {
   position: absolute;
   top: -7px;
   left: 21px;
-  width: 100px;
 }
 .planet > .inner .line .seg2 > .inner {
   position: absolute;
@@ -505,7 +656,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 0%;
   height: 1px;
   background: #f4dfbd url(../img/text-mask.png) repeat 0 0;
   -webkit-box-shadow: 0 0 2px 0 #f4dfbd;
@@ -530,10 +681,334 @@ body {
 .planet > .inner .line .seg2 .text span {
   padding-right: 0;
   text-shadow: 0 0 2px rgba(244, 223, 189, 0.9);
+  opacity: 0;
   -webkit-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
   -moz-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
   -ms-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
   -o-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.planet > .inner .line .seg2 .desc {
+  position: absolute;
+  top: 34px;
+  right: 5px;
+  text-align: right;
+  color: #f4dfbd;
+  background: -webkit-linear-gradient(transparent, transparent), url(../img/text-mask.png) repeat 0 0;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+.planet > .inner .line .seg2 .desc span {
+  display: block;
+  font-size: 10px;
+  line-height: 140%;
+  text-shadow: 0 0 1px rgba(244, 223, 189, 0.9);
+  opacity: 0;
+  -webkit-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 375ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.planet > .inner.debug,
+.planet > .inner:hover {
+  overflow: visible;
+}
+.planet > .inner.debug .corner,
+.planet > .inner:hover .corner {
+  opacity: 0;
+}
+.planet > .inner.debug .corner.I,
+.planet > .inner:hover .corner.I {
+  -webkit-transition: opacity 0s linear;
+  -moz-transition: opacity 0s linear;
+  -ms-transition: opacity 0s linear;
+  -o-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+  -webkit-animation: burnout 375ms linear;
+  animation: burnout 375ms linear;
+}
+.planet > .inner.debug .corner.II,
+.planet > .inner:hover .corner.II {
+  -webkit-transition: opacity 0s linear;
+  -moz-transition: opacity 0s linear;
+  -ms-transition: opacity 0s linear;
+  -o-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+  -webkit-animation: burnout 0 linear;
+  animation: burnout 0 linear;
+}
+.planet > .inner.debug .corner.III,
+.planet > .inner:hover .corner.III {
+  -webkit-transition: opacity 0s linear 75ms;
+  -moz-transition: opacity 0s linear 75ms;
+  -ms-transition: opacity 0s linear 75ms;
+  -o-transition: opacity 0s linear 75ms;
+  transition: opacity 0s linear 75ms;
+  -webkit-animation: burnout 375ms linear 75ms;
+  animation: burnout 375ms linear 75ms;
+}
+.planet > .inner.debug .corner.IV,
+.planet > .inner:hover .corner.IV {
+  -webkit-transition: opacity 0s linear 225ms;
+  -moz-transition: opacity 0s linear 225ms;
+  -ms-transition: opacity 0s linear 225ms;
+  -o-transition: opacity 0s linear 225ms;
+  transition: opacity 0s linear 225ms;
+  -webkit-animation: burnout 225ms linear 150ms;
+  animation: burnout 225ms linear 150ms;
+}
+.planet > .inner.debug .line .seg1,
+.planet > .inner:hover .line .seg1 {
+  opacity: 1;
+  -webkit-transition: opacity 0s linear 375ms;
+  -moz-transition: opacity 0s linear 375ms;
+  -ms-transition: opacity 0s linear 375ms;
+  -o-transition: opacity 0s linear 375ms;
+  transition: opacity 0s linear 375ms;
+  -webkit-animation: flickon 750ms linear 375ms;
+  animation: flickon 750ms linear 375ms;
+}
+.planet > .inner.debug .line .seg2 .bar,
+.planet > .inner:hover .line .seg2 .bar {
+  width: 100%;
+  opacity: 1;
+  -webkit-transition: width 375ms cubic-bezier(0.23, 1, 0.32, 1) 800ms;
+  -moz-transition: width 375ms cubic-bezier(0.23, 1, 0.32, 1) 800ms;
+  -ms-transition: width 375ms cubic-bezier(0.23, 1, 0.32, 1) 800ms;
+  -o-transition: width 375ms cubic-bezier(0.23, 1, 0.32, 1) 800ms;
+  transition: width 375ms cubic-bezier(0.23, 1, 0.32, 1) 800ms;
+}
+.planet > .inner.debug .line .seg2 .text span,
+.planet > .inner:hover .line .seg2 .text span {
+  opacity: 1;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n) {
+  -webkit-transition: opacity 0s linear 875ms;
+  -moz-transition: opacity 0s linear 875ms;
+  -ms-transition: opacity 0s linear 875ms;
+  -o-transition: opacity 0s linear 875ms;
+  transition: opacity 0s linear 875ms;
+  -webkit-animation: flickonscreen 750ms linear 875ms;
+  animation: flickonscreen 750ms linear 875ms;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n+1),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n+1) {
+  -webkit-transition: opacity 0s linear 875ms;
+  -moz-transition: opacity 0s linear 875ms;
+  -ms-transition: opacity 0s linear 875ms;
+  -o-transition: opacity 0s linear 875ms;
+  transition: opacity 0s linear 875ms;
+  -webkit-animation: flickonscreen 750ms linear 875ms;
+  animation: flickonscreen 750ms linear 875ms;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n+2),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n+2) {
+  -webkit-transition: opacity 0s linear 875ms;
+  -moz-transition: opacity 0s linear 875ms;
+  -ms-transition: opacity 0s linear 875ms;
+  -o-transition: opacity 0s linear 875ms;
+  transition: opacity 0s linear 875ms;
+  -webkit-animation: flickonscreen 750ms linear 875ms;
+  animation: flickonscreen 750ms linear 875ms;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n+3),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n+3) {
+  -webkit-transition: opacity 0s linear 1025ms;
+  -moz-transition: opacity 0s linear 1025ms;
+  -ms-transition: opacity 0s linear 1025ms;
+  -o-transition: opacity 0s linear 1025ms;
+  transition: opacity 0s linear 1025ms;
+  -webkit-animation: flickonscreen 750ms linear 950ms;
+  animation: flickonscreen 750ms linear 950ms;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n+4),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n+4) {
+  -webkit-transition: opacity 0s linear 875ms;
+  -moz-transition: opacity 0s linear 875ms;
+  -ms-transition: opacity 0s linear 875ms;
+  -o-transition: opacity 0s linear 875ms;
+  transition: opacity 0s linear 875ms;
+  -webkit-animation: flickonscreen 750ms linear 875ms;
+  animation: flickonscreen 750ms linear 875ms;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n+5),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n+5) {
+  -webkit-transition: opacity 0s linear 950ms;
+  -moz-transition: opacity 0s linear 950ms;
+  -ms-transition: opacity 0s linear 950ms;
+  -o-transition: opacity 0s linear 950ms;
+  transition: opacity 0s linear 950ms;
+  -webkit-animation: flickonscreen 750ms linear 950ms;
+  animation: flickonscreen 750ms linear 950ms;
+}
+.planet > .inner.debug .line .seg2 .text span:nth-child(5n+7),
+.planet > .inner:hover .line .seg2 .text span:nth-child(5n+7) {
+  -webkit-transition: opacity 0s linear 875ms;
+  -moz-transition: opacity 0s linear 875ms;
+  -ms-transition: opacity 0s linear 875ms;
+  -o-transition: opacity 0s linear 875ms;
+  transition: opacity 0s linear 875ms;
+  -webkit-animation: flickonscreen 750ms linear 875ms;
+  animation: flickonscreen 750ms linear 875ms;
+}
+.planet > .inner.debug .line .seg2 .desc span,
+.planet > .inner:hover .line .seg2 .desc span {
+  opacity: 1;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 15),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 15) {
+  -webkit-transition: opacity 0s linear 5750ms;
+  -moz-transition: opacity 0s linear 5750ms;
+  -ms-transition: opacity 0s linear 5750ms;
+  -o-transition: opacity 0s linear 5750ms;
+  transition: opacity 0s linear 5750ms;
+  -webkit-animation: flickonscreen 750ms linear 5750ms;
+  animation: flickonscreen 750ms linear 5750ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 14),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 14) {
+  -webkit-transition: opacity 0s linear 5450ms;
+  -moz-transition: opacity 0s linear 5450ms;
+  -ms-transition: opacity 0s linear 5450ms;
+  -o-transition: opacity 0s linear 5450ms;
+  transition: opacity 0s linear 5450ms;
+  -webkit-animation: flickonscreen 750ms linear 5450ms;
+  animation: flickonscreen 750ms linear 5450ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 13),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 13) {
+  -webkit-transition: opacity 0s linear 5150ms;
+  -moz-transition: opacity 0s linear 5150ms;
+  -ms-transition: opacity 0s linear 5150ms;
+  -o-transition: opacity 0s linear 5150ms;
+  transition: opacity 0s linear 5150ms;
+  -webkit-animation: flickonscreen 750ms linear 5150ms;
+  animation: flickonscreen 750ms linear 5150ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 12),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 12) {
+  -webkit-transition: opacity 0s linear 4850ms;
+  -moz-transition: opacity 0s linear 4850ms;
+  -ms-transition: opacity 0s linear 4850ms;
+  -o-transition: opacity 0s linear 4850ms;
+  transition: opacity 0s linear 4850ms;
+  -webkit-animation: flickonscreen 750ms linear 4850ms;
+  animation: flickonscreen 750ms linear 4850ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 11),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 11) {
+  -webkit-transition: opacity 0s linear 4550ms;
+  -moz-transition: opacity 0s linear 4550ms;
+  -ms-transition: opacity 0s linear 4550ms;
+  -o-transition: opacity 0s linear 4550ms;
+  transition: opacity 0s linear 4550ms;
+  -webkit-animation: flickonscreen 750ms linear 4550ms;
+  animation: flickonscreen 750ms linear 4550ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 10),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 10) {
+  -webkit-transition: opacity 0s linear 4250ms;
+  -moz-transition: opacity 0s linear 4250ms;
+  -ms-transition: opacity 0s linear 4250ms;
+  -o-transition: opacity 0s linear 4250ms;
+  transition: opacity 0s linear 4250ms;
+  -webkit-animation: flickonscreen 750ms linear 4250ms;
+  animation: flickonscreen 750ms linear 4250ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 9),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 9) {
+  -webkit-transition: opacity 0s linear 3950ms;
+  -moz-transition: opacity 0s linear 3950ms;
+  -ms-transition: opacity 0s linear 3950ms;
+  -o-transition: opacity 0s linear 3950ms;
+  transition: opacity 0s linear 3950ms;
+  -webkit-animation: flickonscreen 750ms linear 3950ms;
+  animation: flickonscreen 750ms linear 3950ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 8),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 8) {
+  -webkit-transition: opacity 0s linear 3650ms;
+  -moz-transition: opacity 0s linear 3650ms;
+  -ms-transition: opacity 0s linear 3650ms;
+  -o-transition: opacity 0s linear 3650ms;
+  transition: opacity 0s linear 3650ms;
+  -webkit-animation: flickonscreen 750ms linear 3650ms;
+  animation: flickonscreen 750ms linear 3650ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 7),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 7) {
+  -webkit-transition: opacity 0s linear 3350ms;
+  -moz-transition: opacity 0s linear 3350ms;
+  -ms-transition: opacity 0s linear 3350ms;
+  -o-transition: opacity 0s linear 3350ms;
+  transition: opacity 0s linear 3350ms;
+  -webkit-animation: flickonscreen 750ms linear 3350ms;
+  animation: flickonscreen 750ms linear 3350ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 6),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 6) {
+  -webkit-transition: opacity 0s linear 3050ms;
+  -moz-transition: opacity 0s linear 3050ms;
+  -ms-transition: opacity 0s linear 3050ms;
+  -o-transition: opacity 0s linear 3050ms;
+  transition: opacity 0s linear 3050ms;
+  -webkit-animation: flickonscreen 750ms linear 3050ms;
+  animation: flickonscreen 750ms linear 3050ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 5),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 5) {
+  -webkit-transition: opacity 0s linear 2750ms;
+  -moz-transition: opacity 0s linear 2750ms;
+  -ms-transition: opacity 0s linear 2750ms;
+  -o-transition: opacity 0s linear 2750ms;
+  transition: opacity 0s linear 2750ms;
+  -webkit-animation: flickonscreen 750ms linear 2750ms;
+  animation: flickonscreen 750ms linear 2750ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 4),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 4) {
+  -webkit-transition: opacity 0s linear 2450ms;
+  -moz-transition: opacity 0s linear 2450ms;
+  -ms-transition: opacity 0s linear 2450ms;
+  -o-transition: opacity 0s linear 2450ms;
+  transition: opacity 0s linear 2450ms;
+  -webkit-animation: flickonscreen 750ms linear 2450ms;
+  animation: flickonscreen 750ms linear 2450ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 3),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 3) {
+  -webkit-transition: opacity 0s linear 2150ms;
+  -moz-transition: opacity 0s linear 2150ms;
+  -ms-transition: opacity 0s linear 2150ms;
+  -o-transition: opacity 0s linear 2150ms;
+  transition: opacity 0s linear 2150ms;
+  -webkit-animation: flickonscreen 750ms linear 2150ms;
+  animation: flickonscreen 750ms linear 2150ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 2),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 2) {
+  -webkit-transition: opacity 0s linear 1850ms;
+  -moz-transition: opacity 0s linear 1850ms;
+  -ms-transition: opacity 0s linear 1850ms;
+  -o-transition: opacity 0s linear 1850ms;
+  transition: opacity 0s linear 1850ms;
+  -webkit-animation: flickonscreen 750ms linear 1850ms;
+  animation: flickonscreen 750ms linear 1850ms;
+}
+.planet > .inner.debug .line .seg2 .desc span:nth-child( 1),
+.planet > .inner:hover .line .seg2 .desc span:nth-child( 1) {
+  -webkit-transition: opacity 0s linear 1550ms;
+  -moz-transition: opacity 0s linear 1550ms;
+  -ms-transition: opacity 0s linear 1550ms;
+  -o-transition: opacity 0s linear 1550ms;
+  transition: opacity 0s linear 1550ms;
+  -webkit-animation: flickonscreen 750ms linear 1550ms;
+  animation: flickonscreen 750ms linear 1550ms;
 }
 
